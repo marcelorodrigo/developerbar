@@ -3,7 +3,7 @@
  * This controller is only for routing (portability) of the 
  * CSS, JS and Images for the Developer Bar
  *
- * @package    Kohana/Debugbar
+ * @package    DeveloperBar
  * @category   Controllers
  * @author     Chris Go
  */

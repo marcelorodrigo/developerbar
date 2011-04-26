@@ -1,5 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-
+/**
+ * Developer Bar
+ * Prints debug information about your Kohana Application
+ * 
+ * @author Marcelo Rodrigo
+ * @package DeveloperBar
+ * @category Classes
+ */
 class Developerbar
 {
 	
