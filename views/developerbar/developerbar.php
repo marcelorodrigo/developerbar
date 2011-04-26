@@ -27,7 +27,6 @@
 </div>
 <script>
 	$("#developerbarKohana").click(function(){
-		//$("#developerbar").toggleClass('minsize')
 		$(".simpleTabs").toggle();
 	});
 </script>
