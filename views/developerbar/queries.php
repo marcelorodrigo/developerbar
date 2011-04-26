@@ -1,3 +1,4 @@
+<?php defined('SYSPATH') or die('No direct script access.') ?>
 <?php foreach($queries['data'] as $dbInstance => $data): ?>
 	<h1>Database <?php echo $dbInstance ?></h1>
 	<table id="queries">
