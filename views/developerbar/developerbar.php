@@ -10,6 +10,7 @@
 			<li><a href="#">Files</a></li>
 			<li><a href="#">Modules</a></li>
 			<li><a href="#">Routes</a></li>
+			<li><a href="#">Benchmarks</a></li>
 		</ul>
 		<div class="simpleTabsContent">
 			<?php echo $queries ?>
@@ -22,6 +23,9 @@
 		</div>
 		<div class="simpleTabsContent">
 			<?php echo $routes ?>
+		</div>
+		<div class="simpleTabsContent">
+			<?php echo $benchmarks ?>
 		</div>
 	</div>
 </div>

@@ -25,6 +25,9 @@
 .simpleTabsContent h1 {
 	font-size: 13pt;
 }
+.simpleTabsContent h2 {
+	font-size: 11pt;
+}
 .simpleTabsContent table {
 	width: 100%;
 	padding: 2px;
@@ -40,4 +43,10 @@
 }
 th {
 	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.benchmark_footer {
+	font-size: 9pt;
 }
