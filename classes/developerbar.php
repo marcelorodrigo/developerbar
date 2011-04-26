@@ -10,8 +10,6 @@
 class Developerbar
 {
 	
-	protected $content;
-	
 	public static function render(){
 		
 		echo self::generate();
