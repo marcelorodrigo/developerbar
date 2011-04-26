@@ -9,14 +9,22 @@
  */
 class Developerbar
 {
-	
-	public static function render(){
-		
-		echo self::generate();
-		
+
+	/**
+	 * Render the generated debug info
+	 */
+	public static function render()
+	{
+		echo self::generate();	
 	}
 	
-	public static function generate(){
+	/**
+	 * Generate all the debug info
+	 * 
+	 * @return string
+	 */
+	public static function generate()
+	{
 		
 		if(!self::is_enabled())
 			return false;
@@ -33,8 +41,6 @@ class Developerbar
 				->bind('files',$files)
 				->render();
 		
-		
-		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
@@ -44,6 +50,11 @@ class Developerbar
 		return $content;
 	}
 	
+	/**
+	 * Collect all info about included files in KO
+	 * 
+	 * @return array
+	 */
 	public static function files()
 	{
 		$files = (array)get_included_files();
@@ -52,6 +63,11 @@ class Developerbar
 		
 	}
 	
+	/**
+	 * Collect all info about queries
+	 * 
+	 * @return array
+	 */
 	public static function queries()
 	{
 		$result = array();
@@ -89,7 +105,6 @@ class Developerbar
 	
 	
 	/** Determines if all the conditions are correct to display the toolbar
-	 * (pretty kludgy, I know)
 	 *
 	 * @returns bool toolbar enabled
 	 */
