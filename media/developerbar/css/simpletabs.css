@@ -6,7 +6,7 @@
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
  
-div.simpleTabs { padding:10px; visibility: hidden; }
+div.simpleTabs { padding:10px; visibility:hidden; }
 ul.simpleTabsNavigation { margin:0 10px; padding:0; text-align:left; }
 ul.simpleTabsNavigation li { list-style:none; display:inline; margin:0; padding:0; }
 ul.simpleTabsNavigation li a { border:1px solid #E0E0E0; padding:3px 6px; background:#F0F0F0; font-size:14px; text-decoration:none; font-family:'DroidSans Mono', Tahoma, Monaco, serif; }
