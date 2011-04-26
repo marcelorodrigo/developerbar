@@ -8,12 +8,16 @@
 		<ul class="simpleTabsNavigation">
 			<li><a href="#">Queries</a></li>
 			<li><a href="#">Files</a></li>
+			<li><a href="#">Modules</a></li>
 		</ul>
 		<div class="simpleTabsContent">
 			<?php echo $queries ?>
 		</div>
 		<div class="simpleTabsContent">
 			<?php echo $files ?>
+		</div>
+		<div class="simpleTabsContent">
+			<?php echo $modules ?>
 		</div>
 	</div>
 </div>

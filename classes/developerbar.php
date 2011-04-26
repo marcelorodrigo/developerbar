@@ -41,10 +41,17 @@ class Developerbar
 				->bind('files',$files)
 				->render();
 		
+		// Modules
+		$modules	= self::modules();
+		$modules	= View::Factory('developerbar/modules')
+				->bind('modules',$modules)
+				->render();
+		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
 				->bind('files', $files)
+				->bind('modules', $modules)
 				->render();
 		
 		return $content;
@@ -60,6 +67,17 @@ class Developerbar
 		$files = (array)get_included_files();
 		sort($files);
 		return $files;
+		
+	}
+	
+	/**
+	 * Collect all info about loaded modules in KO
+	 * 
+	 * @return array
+	 */
+	public static function modules()
+	{
+		return Kohana::modules();
 		
 	}
 	
