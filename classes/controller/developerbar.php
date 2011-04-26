@@ -1,8 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
  * This controller is only for routing (portability) of the 
- * CSS, JS and Images for the Debugbar.  All other calls reference
- * the Debugbar class (Kohana_Debugbar) directly
+ * CSS, JS and Images for the Developer Bar
  *
  * @package    Kohana/Debugbar
  * @category   Controllers
@@ -41,4 +40,4 @@ class Controller_DeveloperBar extends Controller {
 	}
 
 
-} // End Kohana Controller Debugbar
+}
