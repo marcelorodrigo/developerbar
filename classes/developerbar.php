@@ -47,11 +47,18 @@ class Developerbar
 				->bind('modules',$modules)
 				->render();
 		
+		// Routes
+		$routes		= self::routesa();
+		$routes		= View::Factory('developerbar/routes')
+				->bind('routes',$routes)
+				->render();
+		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
 				->bind('files', $files)
 				->bind('modules', $modules)
+				->bind('routes', $routes)
 				->render();
 		
 		return $content;
@@ -78,6 +85,17 @@ class Developerbar
 	public static function modules()
 	{
 		return Kohana::modules();
+		
+	}
+	
+	/**
+	 * Collect all info about routes
+	 * 
+	 * @return array
+	 */
+	public static function routesa()
+	{
+		return Route::all();
 		
 	}
 	
