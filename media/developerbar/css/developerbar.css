@@ -1,0 +1,43 @@
+.fullsize {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	z-index: 9999;
+	border-bottom: 1px solid #aaa;
+	background-color: #efefef;
+	font-family: 'Droid Sans Mono', Tahoma, Monaco, serif;
+	font-size: 9pt;
+	opacity: 0.90;
+	filter: alpha(opacity:90);
+}
+
+
+#developerbarKohana {
+	cursor: pointer;
+}
+
+#developerbarMain {
+	padding: 10px;
+	vertical-align: top;
+	text-align: right;
+}
+.simpleTabsContent h1 {
+	font-size: 13pt;
+}
+.simpleTabsContent table {
+	width: 100%;
+	padding: 2px;
+	font-size: 8pt;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+.odd td {
+	background-color: #ddd;
+}
+
+#queries .sql {
+	width: 84%;
+}
+th {
+	text-align: left;
+}
