@@ -53,19 +53,12 @@ class Developerbar
 				->bind('routes',$routes)
 				->render();
 		
-		// Benchmarks
-		$benchmarks	= self::benchmarks();
-		$benchmarks	= View::Factory('developerbar/benchmarks')
-				->bind('benchmarks',$benchmarks)
-				->render();
-		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
 				->bind('files', $files)
 				->bind('modules', $modules)
 				->bind('routes', $routes)
-				->bind('benchmarks', $benchmarks)
 				->render();
 		
 		return $content;
@@ -105,58 +98,6 @@ class Developerbar
 		return Route::all();
 		
 	}
-	
-	
-	/**
-	 * Creates a formatted array of all Benchmarks
-	 *
-	 * @return array formatted benchmarks
-	 */
-	public static function benchmarks()
-	{
-		if (Kohana::$profiling == FALSE)
-		{
-			return array();
-		}
-
-		$groups = Profiler::groups();
-		$result = array();
-		foreach(array_keys($groups) as $group)
-		{
-			if (strpos($group, 'database (') === FALSE)
-			{
-				foreach($groups[$group] as $name => $marks)
-				{
-					$stats = Profiler::stats($marks);
-					$result[$group][] = array
-					(
-						'name'			=> $name,
-						'count'			=> count($marks),
-						'total_time'	=> $stats['total']['time'],
-						'avg_time'		=> $stats['average']['time'],
-						'total_memory'	=> $stats['total']['memory'],
-						'avg_memory'	=> $stats['average']['memory'],
-					);
-				}
-			}
-		}
-		// add total stats
-		$total = Profiler::application();
-		$result['application'] = array
-		(
-			'count'			=> 1,
-			'total_time'	=> $total['current']['time'],
-			'avg_time'		=> $total['average']['time'],
-			'total_memory'	=> $total['current']['memory'],
-			'avg_memory'	=> $total['average']['memory'],
-
-		);
-
-		return $result;
-	}
-
-	
-	
 	
 	/**
 	 * Collect all info about queries

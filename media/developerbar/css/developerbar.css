@@ -1,52 +1,70 @@
-.fullsize {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	z-index: 9999;
-	border-bottom: 1px solid #aaa;
-	background-color: #efefef;
-	font-family: 'Droid Sans Mono', Tahoma, Monaco, serif;
-	font-size: 9pt;
-	opacity: 0.90;
-	filter: alpha(opacity:90);
-}
-
-
-#developerbarKohana {
-	cursor: pointer;
-}
-
 #developerbarMain {
-	padding: 10px;
-	vertical-align: top;
-	text-align: right;
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	z-index: 1000;
+	background-color: #F6F6F6;
+	opacity: 0.95;
+	filter: alpha(opacity:95);
 }
-.simpleTabsContent h1 {
-	font-size: 13pt;
+/* Reset */
+div.simpleTabsContent,
+div.simpleTabsContent div,
+div.simpleTabsContent span,
+div.simpleTabsContent pre,
+div.simpleTabsContent h1,
+div.simpleTabsContent a,
+div.simpleTabsContent ul, 
+div.simpleTabsContent li,
+div.simpleTabsContent table,
+div.simpleTabsContent thead tr,
+div.simpleTabsContent tbody tr,
+div.simpleTabsContent thead tr td,
+div.simpleTabsContent tbody tr td,
+div.simpleTabsContent thead tr th,
+div.simpleTabsContent tbody tr th {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: middle;
+	background: transparent;
+	line-height: 1;
+	text-transform: none;
+	font-size:100%;
 }
-.simpleTabsContent h2 {
-	font-size: 11pt;
-}
-.simpleTabsContent table {
+#developerbarKohanaFull { display: none; padding: 4px 0 4px 20px; cursor: pointer; }
+#developerbarKohana { cursor: pointer; }
+.fullSize { width: 100%; }
+div.simpleTabsContent table {
 	width: 100%;
-	padding: 2px;
-	font-size: 8pt;
-	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-family: monospace;
+	font-size: 9pt;
+	border: 1px solid #ddd;
 }
-.odd td {
-	background-color: #ddd;
-}
-
-#queries .sql {
-	width: 84%;
-}
-th {
+div.simpleTabsContent table thead tr th,
+div.simpleTabsContent table tbody tr th,
+div.simpleTabsContent table tbody tr td,
+div.simpleTabsContent table tfoot tr th {
 	text-align: left;
-}
-.right {
-	text-align: right;
-}
-.benchmark_footer {
+	color: #333;
+	font-style: normal;
+	padding: 2px;
+	font-family: monospace;
 	font-size: 9pt;
 }
+div.simpleTabsContent table tbody tr.odd td { background-color: #ddd; }
+div.simpleTabsContent table tbody tr.normal td { background-color: #eee; }
+div.simpleTabsContent h1 {
+	font-size: 14pt;
+	padding: 4px 0 6px 0;
+}
+/** SimpleTabs CSS **/
+div.simpleTabs { padding:10px; display:none; }
+ul.simpleTabsNavigation { margin:0 10px; padding:0; text-align:left; }
+ul.simpleTabsNavigation li { list-style:none; display:inline; margin:0; padding:0; }
+ul.simpleTabsNavigation li a { border:1px solid #E0E0E0; padding:3px 6px; background:#F0F0F0; font-size:13px; text-decoration:none; color: #0063dc; font-family: Arial ,sans-serif; }
+ul.simpleTabsNavigation li a:hover { background-color:#F6F6F6; }
+ul.simpleTabsNavigation li a.current { background:#fff; color:#222; border-bottom:1px solid #fff; }
+div.simpleTabsContent { border:1px solid #E0E0E0; padding:5px 15px 15px; margin-top:3px; display:none; }
+div.simpleTabsContent.currentTab { display:block; }
