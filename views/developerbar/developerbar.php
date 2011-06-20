@@ -1,5 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <?php echo html::style('developerbar/media/css/developerbar.css') ?>
+<?php echo html::script('developerbar/media/js/jquery.min.js') ?>
 <?php echo html::script('developerbar/media/js/simpletabs_1.3.packed.js') ?>
 <div id="developerbarMain">
 	<div id="developerbarToolbar">
