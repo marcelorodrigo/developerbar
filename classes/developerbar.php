@@ -53,12 +53,19 @@ class Developerbar
 				->bind('routes',$routes)
 				->render();
 		
+		// Session
+		$session	= self::session();
+		$session	= View::Factory('developerbar/session')
+				->bind('session',$session)
+				->render();
+		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
 				->bind('files', $files)
 				->bind('modules', $modules)
 				->bind('routes', $routes)
+				->bind('session', $session)
 				->render();
 		
 		return $content;
@@ -96,6 +103,17 @@ class Developerbar
 	public static function routes()
 	{
 		return Route::all();
+		
+	}
+	
+	/**
+	 * Collect all info about session
+	 * 
+	 * @return array
+	 */
+	public static function session()
+	{
+		return ksort(Session::instance()->as_array());
 		
 	}
 	
