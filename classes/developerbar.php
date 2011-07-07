@@ -113,8 +113,10 @@ class Developerbar
 	 */
 	public static function session()
 	{
-		return ksort(Session::instance()->as_array());
+		$session = Session::instance()->as_array();
+		ksort($session);
 		
+		return $session;
 	}
 	
 	/**
