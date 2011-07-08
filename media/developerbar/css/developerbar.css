@@ -8,21 +8,21 @@
 	filter: alpha(opacity:95);
 }
 /* Reset */
-div.simpleTabsContent,
-div.simpleTabsContent div,
-div.simpleTabsContent span,
-div.simpleTabsContent pre,
-div.simpleTabsContent h1,
-div.simpleTabsContent a,
-div.simpleTabsContent ul, 
-div.simpleTabsContent li,
-div.simpleTabsContent table,
-div.simpleTabsContent thead tr,
-div.simpleTabsContent tbody tr,
-div.simpleTabsContent thead tr td,
-div.simpleTabsContent tbody tr td,
-div.simpleTabsContent thead tr th,
-div.simpleTabsContent tbody tr th {
+div.tabbed,
+div.tabbed div,
+div.tabbed span,
+div.tabbed pre,
+div.tabbed h1,
+div.tabbed a,
+div.tabbed ul, 
+div.tabbed li,
+div.tabbed table,
+div.tabbed thead tr,
+div.tabbed tbody tr,
+div.tabbed thead tr td,
+div.tabbed tbody tr td,
+div.tabbed thead tr th,
+div.tabbed tbody tr th {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -36,16 +36,16 @@ div.simpleTabsContent tbody tr th {
 #developerbarKohanaFull { display: none; padding: 4px 0 4px 20px; cursor: pointer; }
 #developerbarKohana { cursor: pointer; }
 .fullSize { width: 100%; }
-div.simpleTabsContent table {
+div.tabbed table {
 	width: 100%;
 	font-family: monospace;
 	font-size: 9pt;
 	border: 1px solid #ddd;
 }
-div.simpleTabsContent table thead tr th,
-div.simpleTabsContent table tbody tr th,
-div.simpleTabsContent table tbody tr td,
-div.simpleTabsContent table tfoot tr th {
+div.tabbed table thead tr th,
+div.tabbed table tbody tr th,
+div.tabbed table tbody tr td,
+div.tabbed table tfoot tr th {
 	text-align: left;
 	color: #333;
 	font-style: normal;
@@ -53,19 +53,19 @@ div.simpleTabsContent table tfoot tr th {
 	font-family: monospace;
 	font-size: 9pt;
 }
-div.simpleTabsContent table tbody tr.odd td { background-color: #ddd; }
-div.simpleTabsContent table tbody tr.normal td { background-color: #eee; }
-div.simpleTabsContent h1 {
+div.tabbed table tbody tr.odd td { background-color: #ddd; }
+div.tabbed table tbody tr.normal td { background-color: #eee; }
+div.tabbed h1 {
 	font-size: 14pt;
 	padding: 4px 0 6px 0;
 }
-/** SimpleTabs CSS BEGIN **/
-div.simpleTabs { padding:10px; display:none; }
-ul.simpleTabsNavigation { margin:0 10px; padding:0; text-align:left; }
-ul.simpleTabsNavigation li { list-style:none; display:inline; margin:0; padding:0; }
-ul.simpleTabsNavigation li a { border:1px solid #E0E0E0; padding:3px 6px; background:#F0F0F0; font-size:13px; text-decoration:none; color: #0063dc; font-family: Arial ,sans-serif; }
-ul.simpleTabsNavigation li a:hover { background-color:#F6F6F6; }
-ul.simpleTabsNavigation li a.current { background:#fff; color:#222; border-bottom:1px solid #fff; }
-div.simpleTabsContent { border:1px solid #E0E0E0; padding:5px 15px 15px; margin-top:3px; display:none; }
-div.simpleTabsContent.currentTab { display:block; }
-/** SimpleTabs CSS END **/
+/** Tabs CSS BEGIN **/
+div.tabbed { padding:10px; display:none; }
+ul.tabs { margin:0 10px; padding:0; text-align:left; }
+ul.tabs li { list-style:none; display:inline; margin:0; padding:0; }
+ul.tabs li a { border:1px solid #E0E0E0; padding:3px 6px; background:#F0F0F0; font-size:13px; text-decoration:none; color: #0063dc; font-family: Arial,sans-serif; }
+ul.tabs li a:hover { background-color:#F6F6F6; }
+ul.tabs li a.current { background:#fff; color:#222; border-bottom:1px solid #fff; }
+.tabbed div { border:1px solid #E0E0E0; padding:5px 15px 15px; margin-top:3px; display:none; width: 100%; }
+div.tabbed.currentTab { display:block; }
+/** Tabs CSS END **/
