@@ -5,7 +5,7 @@ This module is originally based on "Kohana Debug Toolbar" <http://pifantastic.co
 
 ### Usage
 
-* Checkout or download project and put into a folder called debugbar under modules
+* Checkout or download project and put into a folder called 'developerbar' under modules
 * Enable Module - see <http://kohanaframework.org/3.1/guide/kohana/modules#enabling-modules>
 * IMPORTANT: This module is not loaded automatically whey your project are in a production environment - see <http://kohanaframework.org/3.1/guide/kohana/security/deploying>
 
@@ -18,3 +18,4 @@ This module is originally based on "Kohana Debug Toolbar" <http://pifantastic.co
 ~~~
 
 No more changes on *bootstrap.php* or *index.php* to run a simple toolbar with debug information :)
+Feel free to submit improvements or bug fixes.
