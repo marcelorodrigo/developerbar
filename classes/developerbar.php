@@ -59,6 +59,12 @@ class Developerbar
 				->bind('session',$session)
 				->render();
 		
+		// $_GET
+		$get		= self::get();
+		$get	= View::Factory('developerbar/get')
+				->bind('get',$get)
+				->render();
+		
 		// Rendering data
 		$content = View::Factory('developerbar/developerbar')
 				->bind('queries', $queries)
@@ -66,6 +72,7 @@ class Developerbar
 				->bind('modules', $modules)
 				->bind('routes', $routes)
 				->bind('session', $session)
+				->bind('get', $get)
 				->render();
 		
 		return $content;
@@ -117,6 +124,18 @@ class Developerbar
 		ksort($session);
 		
 		return $session;
+	}
+	/**
+	 * Collect all info about get variables
+	 * 
+	 * @return array
+	 */
+	public static function get()
+	{
+		$get = Request::initial()->query();
+		ksort($get);
+		
+		return $get;
 	}
 	
 	/**

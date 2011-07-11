@@ -13,6 +13,7 @@
 				<li class="t3"><a class="t3 tab" title="Modules">Modules</a></li>
 				<li class="t4"><a class="t4 tab" title="Routes">Routes</a></li>
 				<li class="t5"><a class="t5 tab" title="Session">Session</a></li>
+				<li class="t6"><a class="t6 tab" title="GET">GET</a></li>
 			</ul>
 			<div class="t1">
 				<?php echo $queries ?>
@@ -28,6 +29,9 @@
 			</div>
 			<div class="t5">
 				<?php echo $session ?>
+			</div>
+			<div class="t6">
+				<?php echo $get ?>
 			</div>
 		</div>
 	</div>
