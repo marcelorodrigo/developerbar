@@ -18,4 +18,5 @@ This module is originally based on "Kohana Debug Toolbar" <http://pifantastic.co
 ~~~
 
 No more changes on *bootstrap.php* or *index.php* to run a simple toolbar with debug information :)
+
 Feel free to submit improvements or bug fixes.
