@@ -31,7 +31,10 @@ class Controller_DeveloperBar extends Controller {
 		// Remove the extension from the filename
 		$file = substr($file, 0, -(strlen($ext) + 1));
 		
-		if ($file = Kohana::find_file($this->base_dir, $file, $ext))
+		// Try loading file
+		$file = Kohana::find_file($this->base_dir, $file, $ext);
+		
+		if($file)
 		{
 			// Check if the browser sent an "if-none-match: <etag>" header, and tell if the file hasn't changed
 			$this->response->check_cache(sha1($this->request->uri()).filemtime($file), $this->request);
