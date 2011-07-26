@@ -23,7 +23,7 @@ class Controller_DeveloperBar extends Controller {
 	{
 		
 		if(!$file)
-			Request::current()->param('file');
+			$file = Request::current()->param('file');
 		
 		// Find the file extension
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
