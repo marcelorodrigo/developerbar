@@ -12,21 +12,12 @@ class Controller_DeveloperBar extends Controller {
 	// Routes
 	protected $base_dir = 'media/developerbar';
 
-	/**
-	 * Index to serve files
-	 * 
-	 * @author Chris Go
-	 * @author Marcelo Rodrigo
-	 * @param mixed $file File to load/serve
-	 */
-	public function action_index($file = Request::current()->param('file'))
+	public function action_index($file)
 	{
 		// Find the file extension
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
-		
 		// Remove the extension from the filename
 		$file = substr($file, 0, -(strlen($ext) + 1));
-		
 		if ($file = Kohana::find_file($this->base_dir, $file, $ext))
 		{
 			// Check if the browser sent an "if-none-match: <etag>" header, and tell if the file hasn't changed
@@ -47,4 +38,6 @@ class Controller_DeveloperBar extends Controller {
 			$this->response->status(404);
 		}
 	}
+
+
 }
