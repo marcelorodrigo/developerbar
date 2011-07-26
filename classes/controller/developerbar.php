@@ -19,8 +19,12 @@ class Controller_DeveloperBar extends Controller {
 	 * @author Marcelo Rodrigo
 	 * @param mixed $file File to load/serve
 	 */
-	public function action_index($file = Request::current()->param('file'))
+	public function action_index($file = null)
 	{
+		
+		if(!$file)
+			Request::current()->param('file');
+		
 		// Find the file extension
 		$ext = pathinfo($file, PATHINFO_EXTENSION);
 		
