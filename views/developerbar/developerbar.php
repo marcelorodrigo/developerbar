@@ -14,6 +14,7 @@
 				<li class="t4"><a class="t4 tab" title="Routes">Routes</a></li>
 				<li class="t5"><a class="t5 tab" title="Session">Session</a></li>
 				<li class="t6"><a class="t6 tab" title="GET">GET</a></li>
+				<li class="t7"><a class="t7 tab" title="POST">POST</a></li>
 			</ul>
 			<div class="t1">
 				<?php echo $queries ?>
@@ -33,6 +34,9 @@
 			<div class="t6">
 				<?php echo $get ?>
 			</div>
+			<div class="t7">
+				<?php echo $post ?>
+			</div>
 		</div>
 	</div>
 </div>
@@ -42,7 +46,7 @@ if(!(window.jQuery)){
 	var s	= document.createElement("script");
 	var h	= document.getElementsByTagName('HEAD').item(0);
 	s.type	= "text/javascript";
-	s.src	= "<?php echo url::site('developerbar/media/js/jquery.min.js')?>";
+	s.src	= "<?php echo Kohana_URL::site('developerbar/media/js/jquery.min.js')?>";
 	h.appendChild(s);
 	
 }
