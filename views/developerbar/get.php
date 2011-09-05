@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <h1>GET Variables</h1>
-<table id="session">
+<table id="get">
 	<theader>
 		<tr>
 			<th>Name</th>
