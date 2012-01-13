@@ -9,5 +9,6 @@ if(Kohana::$environment !== Kohana::PRODUCTION)
 		));
 
 	// Load Developerbar :)
-	register_shutdown_function('developerbar::render');
+	$objDeveloperBar = Developerbar::factory();
+	register_shutdown_function(array(&$objDeveloperBar,'render'));
 }

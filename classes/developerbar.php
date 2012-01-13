@@ -9,13 +9,40 @@
  */
 class Developerbar
 {
+	
+	/**
+	 * User enabled control
+	 * @var bool
+	 */
+	private $_userEnabled = null;
+	
+	/**
+	 * Store instance of class
+	 * @var Developerbar
+	 */
+    private static $instance;
+	
+	/**
+	 * Factory Method
+	 * @return Developerbar 
+	 */
+	public static function factory()
+	{
+		if(!isset(self::$instance)) {
+			//$c = __CLASS__;
+			self::$instance = new Developerbar;
+        }
 
+        return self::$instance;
+	}
+	
 	/**
 	 * Render the generated debug info
+	 * @return mixed
 	 */
-	public static function render()
+	public function render()
 	{
-		echo self::generate();	
+		echo $this->generate();	
 	}
 	
 	/**
@@ -23,10 +50,10 @@ class Developerbar
 	 * 
 	 * @return string
 	 */
-	public static function generate()
+	public function generate()
 	{
 		
-		if(!self::is_enabled())
+		if(!$this->is_enabled())
 			return false;
 		
 		// Queries
@@ -200,13 +227,26 @@ class Developerbar
 	}
 	
 	
+	/**
+	 * User setting for enable/disable this class
+	 * 
+	 * @param bool $enabled 
+	 */
+	public function enabled($enabled)
+	{
+		$this->_userEnabled = (bool) $enabled;
+	}
+	
 	/** Determines if all the conditions are correct to display the toolbar
 	 *
 	 * @returns bool toolbar enabled
 	 */
-	public static function is_enabled()
+	public function is_enabled()
 	{
-		
+		// User forced enable/disable class?
+		if(!is_null($this->_userEnabled))
+			return $this->_userEnabled;
+
 		// Don't developerbar yourself
 		if(Request::initial()->controller() == 'developerbar')
 			return FALSE;
@@ -219,17 +259,7 @@ class Developerbar
 		if (isset($_GET['debug']) and strtolower($_GET['debug']) == 'false')
 			return FALSE;
 
-		// Don't auto render if auto_render config is FALSE
-		//if (Kohana::config('debugbar.auto_render') !== TRUE)
-			//return FALSE;
-
-		// Auto render if secret key isset
-		//$secret_key = Kohana::config('debugbar.secret_key');
-		//if ($secret_key !== FALSE and isset($_GET[$secret_key]))
-		//	return TRUE;
-
-		// Don't auto render when in PRODUCTION (this can obviously be
-		// overridden by the above secret key)
+		// Don't auto render when in Kohana::PRODUCTION in environment
 		if (Kohana::$environment == Kohana::PRODUCTION)
 			return FALSE;
 

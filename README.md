@@ -17,6 +17,20 @@ This module is originally based on "Kohana Debug Toolbar" <http://pifantastic.co
     ));
 ~~~
 
+### Force Enable/Disable
+
+DeveloperBar attemps to enable/disabled ourself conform your environment settings.
+If you want *force* enable or disable DeveloperBar, simple use in any point:
+
+~~~
+// Force enable
+Developerbar::factory()->enabled(true);
+
+// Force disable
+Developerbar::factory()->enabled(false);
+~~~
+
+-------
 No more changes on *bootstrap.php* or *index.php* to run a simple toolbar with debug information :)
 
 Feel free to submit improvements or bug fixes.
