@@ -11,7 +11,7 @@
 		<?php foreach($session as $name => $value): ?>
 			<tr class="<?php echo text::alternate('odd','normal')?>">
 				<td><?php echo $name ?></td>
-				<td><?php var_export($value) ?></td>
+				<td><?php var_dump($value) ?></td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>
