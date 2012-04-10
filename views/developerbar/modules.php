@@ -1,11 +1,11 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <h1>Modules</h1>
 <table id="modules">
-	<theader>
+	<thead>
 		<tr>
 			<th>Module</th>
 		</tr>
-	</theader>
+	</thead>
 	<tbody>
 		<?php foreach($modules as $m): ?>
 			<tr class="<?php echo text::alternate('odd','normal')?>">

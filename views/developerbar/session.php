@@ -1,12 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <h1>Session</h1>
 <table id="session">
-	<theader>
+	<thead>
 		<tr>
 			<th>Name</th>
 			<th>Value</th>
 		</tr>
-	</theader>
+	</thead>
 	<tbody>
 		<?php foreach($session as $name => $value): ?>
 			<tr class="<?php echo text::alternate('odd','normal')?>">

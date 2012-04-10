@@ -1,12 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <h1>POST Variables</h1>
 <table id="post">
-	<theader>
+	<thead>
 		<tr>
 			<th>Name</th>
 			<th>Value</th>
 		</tr>
-	</theader>
+	</thead>
 	<tbody>
 		<?php foreach($post as $name => $value): ?>
 			<tr class="<?php echo text::alternate('odd','normal')?>">

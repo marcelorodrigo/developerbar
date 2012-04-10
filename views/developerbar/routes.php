@@ -1,11 +1,11 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 <h1>Routes</h1>
 <table id="routes">
-	<theader>
+	<thead>
 		<tr>
 			<th>Route</th>
 		</tr>
-	</theader>
+	</thead>
 	<tbody>
 		
 		<?php foreach($routes as $name => $route): ?>

@@ -2,13 +2,13 @@
 <?php foreach($queries['data'] as $dbInstance => $data): ?>
 	<h1>Database <?php echo $dbInstance ?></h1>
 	<table id="queries">
-		<theader>
+		<thead>
 			<tr>
 				<th>SQL</th>
 				<th>Time</th>
 				<th>Memory</th>
 			</tr>
-		</theader>
+		</thead>
 		<tbody>
 		<?php for ($i = 0; $i < $data['total']['count'] ; $i++): ?>
 			<tr class='<?php echo text::alternate('odd','normal')?>'>
