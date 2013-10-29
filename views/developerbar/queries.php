@@ -11,7 +11,7 @@
 		</thead>
 		<tbody>
 		<?php for ($i = 0; $i < $data['total']['count'] ; $i++): ?>
-			<tr class='<?php echo text::alternate('odd','normal')?>'>
+                    <tr class='<?php echo Text::alternate('odd','normal')?>'>
 				<td><?php echo $data[$i]['name'] ?></td>
 				<td><?php echo number_format($data[$i]['time'] * 1000, 3) ?> ms</td>
 				<td><?php echo number_format($data[$i]['memory'] / 1024, 3) ?> kb</td>

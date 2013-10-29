@@ -40,7 +40,7 @@ class Controller_DeveloperBar extends Controller {
         if ($file)
         {
             // Check if the browser sent an "if-none-match: <etag>" header, and tell if the file hasn't changed
-            $this->response->check_cache(sha1($this->request->uri()) . filemtime($file), $this->request);
+            $this->check_cache(sha1($this->request->uri()) . filemtime($file), $this->request);
 
             // Send the file content as the response
             // $this->response->body(file_get_contents($file));

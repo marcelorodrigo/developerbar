@@ -1,10 +1,10 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
-<?php echo html::style('developerbar/media/css/developerbar.css') ?>
+<?php echo HTML::style('developerbar/media/css/developerbar.css') ?>
 <div id="developerbarMain">
 	<div id="developerbarToolbar">
 		<div>
-			<?php echo html::image('developerbar/media/img/k.png', array('alt' => 'Kohana DeveloperBar','id' => 'developerbarKohana')) ?>
-			<?php echo html::image('developerbar/media/img/kohana.png', array('alt' => 'Kohana DeveloperBar','id' => 'developerbarKohanaFull')) ?>
+			<?php echo HTML::image('developerbar/media/img/k.png', array('alt' => 'Kohana DeveloperBar','id' => 'developerbarKohana')) ?>
+			<?php echo HTML::image('developerbar/media/img/kohana.png', array('alt' => 'Kohana DeveloperBar','id' => 'developerbarKohanaFull')) ?>
 		</div>
 		<div class="tabbed">
 			<ul class="tabs">
@@ -48,11 +48,11 @@ if(!(window.jQuery)){
 	s.type	= "text/javascript";
 	s.src	= "<?php echo Kohana_URL::site('developerbar/media/js/jquery.min.js')?>";
 	h.appendChild(s);
-	
 }
 
-window.onload = function(){
+$(function(){
 	$("#developerbarKohana").click(function(){
+            alert();
 		$("#developerbarKohana").toggle();
 		$("#developerbarMain").toggleClass('fullSize');
 		$("#developerbarKohanaFull").toggle();
@@ -78,5 +78,5 @@ window.onload = function(){
 		$('div.tabbed ul.tabs li a').removeClass('tab-current');
 		$(this).addClass('tab-current');
 		});
-};
+});
 </script>

@@ -9,7 +9,7 @@
 	<tbody>
 		
 		<?php foreach($routes as $name => $route): ?>
-			<tr class="<?php echo text::alternate('odd','normal')?>">
+			<tr class="<?php echo Text::alternate('odd','normal')?>">
 				<td><?php echo $name ?></td>
 			</tr>
 		<?php endforeach ?>

@@ -1,5 +1,6 @@
 ### About
 
+Now updated to work with Kohana 3.3
 Developer Bar displays useful debug information about your Kohana 3.2 Application for us (developers!).
 This module is originally based on "Kohana Debug Toolbar" <http://pifantastic.com/kohana-debug-toolbar/> for Kohana v2.3 (by Aaron Forsander).
 
