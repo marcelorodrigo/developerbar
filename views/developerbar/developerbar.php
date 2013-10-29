@@ -52,7 +52,6 @@ if(!(window.jQuery)){
 
 $(function(){
 	$("#developerbarKohana").click(function(){
-            alert();
 		$("#developerbarKohana").toggle();
 		$("#developerbarMain").toggleClass('fullSize');
 		$("#developerbarKohanaFull").toggle();
