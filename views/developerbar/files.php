@@ -8,7 +8,7 @@
 	</thead>
 	<tbody>
 		<?php foreach($files as $f): ?>
-			<tr class="<?php echo text::alternate('odd','normal')?>">
+			<tr class="<?php echo Text::alternate('odd','normal')?>">
 				<td><?php echo $f ?></td>
 			</tr>
 		<?php endforeach ?>

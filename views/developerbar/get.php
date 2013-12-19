@@ -9,7 +9,7 @@
 	</thead>
 	<tbody>
 		<?php foreach($get as $name => $value): ?>
-			<tr class="<?php echo text::alternate('odd','normal')?>">
+			<tr class="<?php echo Text::alternate('odd','normal')?>">
 				<td><?php echo $name ?></td>
 				<td><?php var_export($value) ?></td>
 			</tr>

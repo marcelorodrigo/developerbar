@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-if(Kohana::$environment !== Kohana::PRODUCTION)
+if(Kohana::$environment == Kohana::DEVELOPMENT)
 {	
 	// Static file serving (CSS, JS, images)
 	Route::set('developerbar/media', 'developerbar/media(/<file>)', array('file' => '.+'))
