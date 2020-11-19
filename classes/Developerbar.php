@@ -1,16 +1,16 @@
 <?php
-
 defined('SYSPATH') or die('No direct script access.');
 
 /**
  * Developer Bar
  * Prints debug information about your Kohana Application
- * 
+ *
  * @author Marcelo Rodrigo
  * @package DeveloperBar
  * @category Classes
  */
-class Developerbar {
+class Developerbar
+{
 
     /**
      * User enabled control
@@ -26,13 +26,11 @@ class Developerbar {
 
     /**
      * Factory Method
-     * @return Developerbar 
+     * @return Developerbar
      */
     public static function factory()
     {
-        if (!isset(self::$instance))
-        {
-            //$c = __CLASS__;
+        if (!isset(self::$instance)) {
             self::$instance = new Developerbar;
         }
 
@@ -50,14 +48,15 @@ class Developerbar {
 
     /**
      * Generate all the debug info
-     * 
+     *
      * @return string
      */
     public function generate()
     {
 
-        if (!$this->is_enabled())
+        if (!$this->is_enabled()) {
             return false;
+        }
 
         // Queries
         $queries = self::queries();
@@ -102,7 +101,7 @@ class Developerbar {
             ->render();
 
         // Rendering data
-        $content = View::Factory('developerbar/developerbar')
+        return View::Factory('developerbar/developerbar')
             ->bind('queries', $queries)
             ->bind('files', $files)
             ->bind('modules', $modules)
@@ -111,25 +110,23 @@ class Developerbar {
             ->bind('get', $get)
             ->bind('post', $post)
             ->render();
-
-        return $content;
     }
 
     /**
      * Collect all info about included files in KO
-     * 
+     *
      * @return array
      */
     public static function files()
     {
-        $files = (array) get_included_files();
+        $files = (array)get_included_files();
         sort($files);
         return $files;
     }
 
     /**
      * Collect all info about loaded modules in KO
-     * 
+     *
      * @return array
      */
     public static function modules()
@@ -139,7 +136,7 @@ class Developerbar {
 
     /**
      * Collect all info about routes
-     * 
+     *
      * @return array
      */
     public static function routes()
@@ -149,7 +146,7 @@ class Developerbar {
 
     /**
      * Collect all info about session
-     * 
+     *
      * @return array
      */
     public static function session()
@@ -162,7 +159,7 @@ class Developerbar {
 
     /**
      * Collect all info about get variables
-     * 
+     *
      * @return array
      */
     public static function get()
@@ -175,7 +172,7 @@ class Developerbar {
 
     /**
      * Collect all info about post variables
-     * 
+     *
      * @return array
      */
     public static function post()
@@ -188,7 +185,7 @@ class Developerbar {
 
     /**
      * Collect all info about queries
-     * 
+     *
      * @return array
      */
     public static function queries()
@@ -197,20 +194,16 @@ class Developerbar {
         $count = $time = $memory = 0;
 
         $groups = Profiler::groups();
-        foreach (Database::$instances as $name => $db)
-        {
+        foreach (Database::$instances as $name => $db) {
 
             $group_name = 'database (' . strtolower($name) . ')';
             $group = arr::get($groups, $group_name, FALSE);
 
-            if ($group)
-            {
+            if ($group) {
                 $sub_time = $sub_memory = $sub_count = 0;
-                foreach ($group as $query => $tokens)
-                {
+                foreach ($group as $query => $tokens) {
                     $sub_count += count($tokens);
-                    foreach ($tokens as $token)
-                    {
+                    foreach ($tokens as $token) {
                         $total = Profiler::total($token);
                         $sub_time += $total[0];
                         $sub_memory += $total[1];
@@ -228,12 +221,12 @@ class Developerbar {
 
     /**
      * User setting for enable/disable this class
-     * 
-     * @param bool $enabled 
+     *
+     * @param bool $enabled
      */
     public function enabled($enabled)
     {
-        $this->_userEnabled = (bool) $enabled;
+        $this->_userEnabled = (bool)$enabled;
     }
 
     /** Determines if all the conditions are correct to display the toolbar
@@ -243,24 +236,29 @@ class Developerbar {
     public function is_enabled()
     {
         // User forced enable/disable class?
-        if (!is_null($this->_userEnabled))
+        if (!is_null($this->_userEnabled)) {
             return $this->_userEnabled;
+        }
 
         // Don't developerbar yourself
-        if (Request::initial()->controller() == 'developerbar')
+        if (Request::initial()->controller() == 'developerbar') {
             return FALSE;
+        }
 
         // Don't auto render toolbar for ajax requests
-        if (Request::initial()->is_ajax())
+        if (Request::initial()->is_ajax()) {
             return FALSE;
+        }
 
         // Don't auto render toolbar if $_GET['debug'] = 'false'
-        if (isset($_GET['debug']) and strtolower($_GET['debug']) == 'false')
+        if (isset($_GET['debug']) && strtolower($_GET['debug']) == 'false') {
             return FALSE;
+        }
 
         // Don't auto render when in Kohana::PRODUCTION in environment
-        if (Kohana::$environment == Kohana::PRODUCTION)
+        if (Kohana::$environment == Kohana::PRODUCTION) {
             return FALSE;
+        }
 
         return TRUE;
     }

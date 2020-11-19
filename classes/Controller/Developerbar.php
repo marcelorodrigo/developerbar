@@ -1,32 +1,33 @@
 <?php
-
 defined('SYSPATH') or die('No direct script access.');
 
 /**
- * This controller is only for routing (portability) of the 
+ * This controller is only for routing (portability) of the
  * CSS, JS and Images for the Developer Bar
  *
  * @package    DeveloperBar
  * @category   Controllers
  * @author     Chris Go
  */
-class Controller_DeveloperBar extends Controller {
+class Controller_DeveloperBar extends Controller
+{
 
     // Routes
     protected $base_dir = 'media/developerbar';
 
     /**
      * Index to serve files
-     * 
-     * @author Chris Go
-     * @author Marcelo Rodrigo
+     *
      * @param mixed $file File to load/serve
+     * @author Marcelo Rodrigo
+     * @author Chris Go
      */
     public function action_index($file = null)
     {
 
-        if (!$file)
+        if (!$file) {
             $file = Request::current()->param('file');
+        }
 
         // Find the file extension
         $ext = pathinfo($file, PATHINFO_EXTENSION);
@@ -37,21 +38,16 @@ class Controller_DeveloperBar extends Controller {
         // Try loading file
         $file = Kohana::find_file($this->base_dir, $file, $ext);
 
-        if ($file)
-        {
+        if ($file) {
             // Check if the browser sent an "if-none-match: <etag>" header, and tell if the file hasn't changed
             $this->check_cache(sha1($this->request->uri()) . filemtime($file), $this->request);
 
-            // Send the file content as the response
-            // $this->response->body(file_get_contents($file));
             // Set the proper headers to allow caching
             $this->response->headers('content-type', File::mime_by_ext($ext));
             $this->response->headers('last-modified', date('r', filemtime($file)));
 
             echo file_get_contents($file);
-        }
-        else
-        {
+        } else {
             // Return a 404 status
             $this->response->status(404);
         }
